@@ -1,0 +1,16 @@
+<tr>
+  <td>
+    <%= image_tag item.order.image.tiny %>
+  </td>
+  <td>
+    <h4><%= item.order.name %></h4>
+    <br>
+    <p><%= item.order.description %></p>
+  </td>
+  <td>
+    <%= humanized_money_with_symbol item.order.price %>
+  </td>
+  <td>
+    <%= humanized_money_with_symbol item.order.price * quantity %>
+  </td>
+</tr>
