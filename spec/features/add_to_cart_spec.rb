@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
+RSpec.feature "Visitor adds to cart", type: :feature, js: true do
 
   # SETUP
   before :each do
@@ -17,15 +17,15 @@ RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
    end
  
 
-   scenario "go to the product page" do
+   scenario "add an item to the cart" do
     # ACT
     visit root_path
-    all('h4').select.first.click
+    find('.addtocart', match: :first).click
     sleep 10
     # DEBUG
     # save_screenshot
 
     # VERIFY
-    expect(page).to have_css 'dl-horizontal'
+    expect(page).to have_text '(1)'
   end
 end
